@@ -1,0 +1,162 @@
+<html>
+<head>
+	<title>Roku Activator &middot; Sign in and activate Roku Channels</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-title" content="Roku Activator">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="apple-touch-icon" href="/img/1024.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/180.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="/img/167.png">
+
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
+		body{
+			padding: 2rem;
+			max-width: 700px;
+			margin: auto;
+			font-family: 'Open Sans', sans-serif;
+			color: #111111;
+		}
+		h1, h2, h3, h4, h5, h6{
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		a:link{
+			text-decoration: none;
+		}
+
+		.channel {
+			text-align: center;
+			font-size: 1.5rem;
+			padding: .5rem;
+			background-color: #111111;
+			margin-bottom: .75rem;
+			border-radius: 6px;
+		}
+
+		.channel:nth-child(even){
+			background-color: #662D91;
+		}
+
+		.channel a:link, .channel a:visited, .channel a:active{
+			color: white;
+		}
+
+		.channel:hover{
+			background-color: deeppink;
+		}
+
+		.channel img {
+			max-width: 80px;
+			max-height: 80px;
+			vertical-align: middle;
+		}
+
+		hr {
+			border-top: 1px solid #111111;
+		}
+
+	</style>
+</head>
+<body ontouchstart=””>
+	<div id="header">
+		<h1>Roku Activator</h1>
+	</div>
+	<div id="channelList"></div>
+	<div id="footer">
+		<hr>
+		<p>&copy; 2019 <a href="http://nealshyam.com">Neal Shyam</a></p>
+	</div>
+</body>
+
+<script>
+	const channels = [
+		{
+			name: "Netflix",
+			link: "https://www.netflix.com/activate",
+			img: "https://www.searchpng.com/wp-content/uploads/2019/02/Netflix-Icon-PNG-image-1024x1024.png"
+		},
+		{
+			name: "Prime Video",
+			link: "http://amazon.com/mytv",
+			img: ""
+		},
+		{
+			name: "Hulu",
+			link: "http://www.hulu.com/activate",
+			img: "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/54/5d/d1/545dd137-0f14-814d-a02f-2095a959ff97/source/256x256bb.jpg"
+		},
+		{
+			name: "HBO GO",
+			link: "https://activate.hbogo.com/",
+			img: ""
+		},
+		{
+			name: "Comedy Central",
+			link: "http://www.cc.com/activate",
+			img: ""
+		},
+		{
+			name: "Fox",
+			link: "https://activate.fox.com/activate",
+			img: "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/5d/aa/d3/5daad38c-4aa1-ca7a-6168-d76c0609386a/source/256x256bb.jpg"
+		},
+		{
+			name: "FX",
+			link: "https://activate.fxnetworks.com/activate",
+			img: ""
+		},
+		{
+			name: "Adult Swim",
+			link: "http://www.adultswim.com/ned/?platform=roku",
+			img: ""
+		},
+		{
+			name: "Showtime",
+			link: "https://www.showtimeanytime.com/#/activate",
+			img: ""
+		},
+		{
+			name: "TBS",
+			link: "https://www.tbs.com/activate",
+			img: ""
+		},
+		{
+			name: "AMC",
+			link: "https://www.amc.com/activate/",
+			img: ""
+		},
+		{
+			name: "Syfy",
+			link: "http://www.syfy.com/activate/roku",
+			img: ""
+		},
+		{
+			name: "Food Network",
+			link: "https://watch.foodnetwork.com/activate",
+			img: ""
+		},
+		{
+			name: "Bravo",
+			link: "http://www.bravotv.com/activate/roku",
+			img: ""
+		}
+	];
+
+  const m = document.getElementById('channelList');
+  for (c of channels){
+    const n = document.createElement('div');
+		n.classList.add("channel");
+		n.innerHTML = `<p><!--<img src="${c.img}" title="${c.name}"> --><a href="${c.link}">${c.name}</a></p>`
+		m.appendChild(n);
+  }
+</script>
+
+</html>
